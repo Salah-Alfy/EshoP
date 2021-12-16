@@ -8,6 +8,7 @@ import 'package:eshop/view/checkout/summary_widget.dart';
 import 'package:eshop/view/widgets/custom_button.dart';
 import 'package:eshop/view_model/checkout_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:status_change/status_change.dart';
 
@@ -34,7 +35,7 @@ class CheckoutView extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              height: 100,
+              height: 100.h,
               child: StatusChange.tileBuilder(
                 theme: StatusChangeThemeData(
                   direction: Axis.horizontal,
@@ -46,7 +47,7 @@ class CheckoutView extends StatelessWidget {
                       MediaQuery.of(context).size.width / _processes.length,
                   nameWidgetBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
+                      padding: EdgeInsets.only(top: 15.0.h),
                       child: Text(
                         _processes[index],
                         style: TextStyle(
@@ -59,10 +60,10 @@ class CheckoutView extends StatelessWidget {
                   indicatorWidgetBuilder: (_, index) {
                     if (index <= controller.index) {
                       return DotIndicator(
-                        size: 35.0,
+                        size: 35.0.sp,
                         border: Border.all(color: Colors.green, width: 1),
                         child: Padding(
-                          padding: const EdgeInsets.all(6.0),
+                          padding:  EdgeInsets.all(6.0.w),
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -73,8 +74,8 @@ class CheckoutView extends StatelessWidget {
                       );
                     } else {
                       return OutlinedDotIndicator(
-                        size: 30,
-                        borderWidth: 1.0,
+                        size: 30.sp,
+                        borderWidth: 1.0.w,
                         color: todoColor,
                       );
                     }
@@ -121,7 +122,7 @@ class CheckoutView extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Container(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20.w),
                     width: MediaQuery.of(context).size.width * .45,
                     child: CustomButton(
                       onPressed: () {
@@ -136,7 +137,7 @@ class CheckoutView extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Container(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20.w),
                     width: MediaQuery.of(context).size.width * .45,
                     child: CustomButton(
                       onPressed: () {

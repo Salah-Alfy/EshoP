@@ -4,6 +4,7 @@ import 'package:eshop/view/widgets/custom_button.dart';
 import 'package:eshop/view/widgets/custom_textformfeild.dart';
 import 'package:eshop/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class RegisterView extends GetWidget<AuthViewModel> {
@@ -18,7 +19,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
         backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 0, right: 20, left: 20),
+        padding:  EdgeInsets.only( right: 20.w, left: 20.w),
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -30,12 +31,12 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     Text(
                       "SIGNUP,",
                       style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 60,
+                  height: 60.h,
                 ),
                  CustomTFF(
                   text: "Name",
@@ -50,7 +51,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                   },
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 40.h,
                 ),
                 CustomTFF(
                   text: "Email",
@@ -65,7 +66,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                   },
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 40.h,
                 ),
                 CustomTFF(
                   obsecure: true,
@@ -80,7 +81,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     }
                   },
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 50.h),
                 CustomButton(
                   onPressed: () {
                     _formkey.currentState!.save();

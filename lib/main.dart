@@ -8,6 +8,7 @@ import 'package:eshop/view_model/cart_view_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -19,11 +20,14 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      initialBinding: Binding(),
-      home: Scaffold(
-        body: ControlView(),
+    return ScreenUtilInit(
+      builder:()=> GetMaterialApp(
+        initialBinding: Binding(),
+        home: Scaffold(
+          body: ControlView(),
+        ),
       ),
+      designSize: const Size(360,600),
     );
     
   }

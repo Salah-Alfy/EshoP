@@ -5,6 +5,7 @@ import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view/widgets/custom_textformfeild.dart';
 import 'package:eshop/view_model/checkout_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AddAddress extends StatelessWidget {
@@ -15,13 +16,13 @@ class AddAddress extends StatelessWidget {
         key: controller.formState,
         child: Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding:  EdgeInsets.all(20.0.w),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 20,
+                    height: 20.h,
                   ),
                   Row(
                     children: [
@@ -30,18 +31,18 @@ class AddAddress extends StatelessWidget {
                         color: primaryColor,
                       ),
                       SizedBox(
-                        width: 5,
+                        width: 5.w,
                       ),
                       Expanded(
-                        child: CustomText(
-                          text: "Billing adress is the same as delivery adress",
-                          fontsize: 20,
+                        child: Text(
+                           "Billing adress is the same as delivery adress",
+                           style: TextStyle(color: Colors.black,fontSize: 18.sp),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 40.h,
                   ),
                   CustomTFF(
                     onSaved: (value) {
@@ -56,7 +57,7 @@ class AddAddress extends StatelessWidget {
                     hint: "21 Alex Davidson Avenue",
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 40.h,
                   ),
                   CustomTFF(
                     onSaved: (value) {
@@ -71,7 +72,7 @@ class AddAddress extends StatelessWidget {
                     hint: "21 Alex Davidson Avenue",
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 40.h,
                   ),
                   CustomTFF(
                     onSaved: (value) {
@@ -86,7 +87,7 @@ class AddAddress extends StatelessWidget {
                     hint: "Victoria Island",
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 40.h,
                   ),
                   Container(
                       width: Get.width,
@@ -94,7 +95,7 @@ class AddAddress extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 10),
+                              padding:  EdgeInsets.only(right: 10.w),
                               child: CustomTFF(
                                 onSaved: (value) {
                                   controller.state = value;
@@ -111,7 +112,7 @@ class AddAddress extends StatelessWidget {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
+                              padding:  EdgeInsets.only(left: 10.w),
                               child: CustomTFF(
                                 onSaved: (value) {
                                   controller.country = value;

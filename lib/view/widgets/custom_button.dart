@@ -2,6 +2,7 @@
 
 import 'package:eshop/helper/constance.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_text.dart';
 
 class CustomButton extends StatelessWidget {
@@ -25,11 +26,11 @@ class CustomButton extends StatelessWidget {
       child: FlatButton(
         onPressed: onPressed,
         color: color,
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(20.w),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),side: BorderSide(color: primaryColor)),
         child: CustomText(
           text: text,
-          fontsize: 14,
+          fontsize: 14.sp,
           color: textColor,
           alignment: Alignment.center,
         ),

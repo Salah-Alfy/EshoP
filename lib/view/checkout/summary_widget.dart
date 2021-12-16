@@ -5,6 +5,7 @@ import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view_model/cart_view_model.dart';
 import 'package:eshop/view_model/checkout_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Summary extends StatelessWidget {
@@ -13,7 +14,7 @@ class Summary extends StatelessWidget {
     return Expanded(
       child: GetBuilder<CartViewModel>(
         builder: (controller) => Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20.0.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -40,7 +41,7 @@ class Summary extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(15))),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           RichText(
                               maxLines: 1,
@@ -50,7 +51,7 @@ class Summary extends StatelessWidget {
                                     color: Colors.black,
                                   ))),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           CustomText(
                             text:
@@ -58,7 +59,7 @@ class Summary extends StatelessWidget {
                             color: primaryColor,
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                         ],
                       ),
@@ -67,35 +68,36 @@ class Summary extends StatelessWidget {
                   itemCount: controller.cartProductModel.length,
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(
-                      width: 20,
+                      width: 20.w,
                     );
                   },
                 ),
               ),
               CustomText(
                 text: "Shipping Adress",
-                fontsize: 24,
+                fontsize: 24.sp,
               ),
-              SizedBox(height:10),
+              SizedBox(height: 10.h),
               GetBuilder<CheckoutViewModel>(
                   builder: (controller) => Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: Get.width*.75,
-                        child: CustomText(
-                          text:
-                              '${controller.street1 + " , " + controller.street2 +
-                               " , " + controller.city + " , " + controller.state + 
-                               " , " + controller.country}',
-                               fontsize: 20,
-                               color: Colors.grey,
-                        ),
-                      ),
-                      
-                      Icon(Icons.check_circle,color: primaryColor,)
-                    ],
-                  ))
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: Get.width * .75,
+                            child: Text(
+                              '${controller.street1 + " , " + controller.street2 + " , " + controller.city + " , " + controller.state + " , " + controller.country}',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                          Icon(
+                            Icons.check_circle,
+                            color: primaryColor,
+                          )
+                        ],
+                      ))
             ],
           ),
         ),

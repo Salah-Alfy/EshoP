@@ -7,6 +7,7 @@ import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view/widgets/custom_textformfeild.dart';
 import 'package:eshop/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends GetWidget<AuthViewModel> {
@@ -17,7 +18,7 @@ class LoginScreen extends GetWidget<AuthViewModel> {
     return Scaffold(
 
       body: Padding(
-        padding: EdgeInsets.only(top: AppBar().preferredSize.height, right: 20, left: 20),
+        padding: EdgeInsets.only(top: AppBar().preferredSize.height.h, right: 20.w, left: 20.w),
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -29,7 +30,7 @@ class LoginScreen extends GetWidget<AuthViewModel> {
                     Text(
                       "Welcome,",
                       style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
                     ),
                     InkWell(
                       onTap: () {
@@ -37,21 +38,21 @@ class LoginScreen extends GetWidget<AuthViewModel> {
                       },
                       child: CustomText(
                           text: "Sign Up",
-                          fontsize: 18,
+                          fontsize: 18.sp,
                           color: Color.fromRGBO(0, 197, 105, 1)),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 CustomText(
                   text: "Sign in to continue",
-                  fontsize: 14,
+                  fontsize: 14.sp,
                   color: Colors.grey,
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                 ),
                 CustomTFF(
                   text: "Email",
@@ -66,7 +67,7 @@ class LoginScreen extends GetWidget<AuthViewModel> {
                   },
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 40.h,
                 ),
                 CustomTFF(
                   obsecure: true,
@@ -82,15 +83,15 @@ class LoginScreen extends GetWidget<AuthViewModel> {
                   },
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 CustomText(
                   text: "Forget Password?",
-                  fontsize: 14,
+                  fontsize: 14.sp,
                   color: Colors.black,
                   alignment: Alignment.topRight,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 CustomButton(
                   onPressed: () {
                     _formkey.currentState!.save();
@@ -100,21 +101,21 @@ class LoginScreen extends GetWidget<AuthViewModel> {
                   },
                   text: "SIGN IN",
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 CustomText(
                   text: "-OR-",
                   color: Colors.black,
-                  fontsize: 16,
+                  fontsize: 16.sp,
                   alignment: Alignment.center,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 CustomSocial(
                   onPressed: () {},
                   text: "Sign In With Facebook",
                   image: "assets/images/Facebook.png",
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 CustomSocial(
                   onPressed: () {

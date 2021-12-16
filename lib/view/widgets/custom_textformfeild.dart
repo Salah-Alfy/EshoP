@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_text.dart';
 
 class CustomTFF extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomTFF extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          CustomText(text: text, fontsize: 14, color: Colors.grey.shade900),
+          CustomText(text: text, fontsize: 14.sp, color: Colors.grey.shade900),
           TextFormField(
             obscureText:obsecure ,
             onSaved: onSaved,

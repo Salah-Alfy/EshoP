@@ -5,6 +5,7 @@ import 'package:eshop/view/widgets/custom_list_tile.dart';
 import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view_model/profile_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class ProfileView extends StatelessWidget {
@@ -33,8 +34,8 @@ class ProfileView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * .25,
-                              height: MediaQuery.of(context).size.width * .25,
+                              width: MediaQuery.of(context).size.width * .25.w,
+                              height: MediaQuery.of(context).size.width * .25.h,
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(100)),
@@ -54,11 +55,12 @@ class ProfileView extends StatelessWidget {
                               children: [
                                 CustomText(
                                   text: controller.userModel!.name,
-                                  fontsize: 32,
+                                  fontsize: 32.sp,
                                   color: Colors.black,
                                 ),
                                 CustomText(
                                   text: controller.userModel!.email,
+                                  fontsize:16.sp,
                                   color: Colors.black,
                                 ),
                               ],
@@ -67,38 +69,38 @@ class ProfileView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 50,
+                        height: 30.h,
                       ),
                       CustomListTile(
                           text: "Edit Profile",
                           leading: "assets/menu/Icon_Edit-Profile.png",
                           trailing: Icon(Icons.arrow_forward_ios),
                           onPressed: () {}),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       CustomListTile(
                           text: "Shipping Adress",
                           leading: "assets/menu/Icon_Location.png",
                           trailing: Icon(Icons.arrow_forward_ios),
                           onPressed: () {}),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       CustomListTile(
                           text: "Order History",
                           leading: "assets/menu/Icon_History.png",
                           trailing: Icon(Icons.arrow_forward_ios),
                           onPressed: () {}),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       CustomListTile(
                           text: "Cards",
                           leading: "assets/menu/Icon_Payment.png",
                           trailing: Icon(Icons.arrow_forward_ios),
                           onPressed: () {}),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       CustomListTile(
                           text: "Notifications",
                           leading: "assets/menu/Icon_Alert.png",
                           trailing: Icon(Icons.arrow_forward_ios),
                           onPressed: () {}),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       CustomListTile(
                           text: "Log Out",
                           leading: "assets/menu/Icon_Exit.png",
@@ -109,7 +111,7 @@ class ProfileView extends StatelessWidget {
                           onPressed: () {
                             controller.signOut();
                           }),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                     ],
                   ),
                 ),

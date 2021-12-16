@@ -4,6 +4,7 @@ import 'package:eshop/helper/constance.dart';
 import 'package:eshop/helper/enum.dart';
 import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DeliveryTime extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _DeliveryTimeState extends State<DeliveryTime> {
         child: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 30.h,
             ),
             RadioListTile<Delivery>(
               value: Delivery.StandardDelivery,
@@ -30,18 +31,15 @@ class _DeliveryTimeState extends State<DeliveryTime> {
                   delivery = value!;
                 });
               },
-              title: CustomText(
-                text: "Standard Delivery",
-                fontsize: 26,
-              ),
-              subtitle: CustomText(
-                text: "Order will be delivered between 3-5 bussines days ",
-                fontsize: 18,
+              title: CustomText(text: "Standard Delivery", fontsize: 24.sp),
+              subtitle: Text(
+                 "Order will be delivered between 3-5 bussines days ",
+                style:  TextStyle(color: Colors.grey[600],fontSize: 18.sp),
               ),
               activeColor: primaryColor,
             ),
             SizedBox(
-              height: 50,
+              height: 30.h,
             ),
             RadioListTile<Delivery>(
               value: Delivery.NextDayDelivery,
@@ -51,19 +49,14 @@ class _DeliveryTimeState extends State<DeliveryTime> {
                   delivery = value!;
                 });
               },
-              title: CustomText(
-                text: "Next Day Delivery",
-                fontsize: 26,
-              ),
-              subtitle: CustomText(
-                text:
-                    "Place your order before 6pm and your items will be delivered the next day",
-                fontsize: 18,
-              ),
+              title: CustomText(text: "Next Day Delivery", fontsize: 24.sp),
+              subtitle: Text(
+                  "Place your order before 6pm and your items will be delivered the next day",
+                  style: TextStyle(color: Colors.grey[600], fontSize: 18.sp)),
               activeColor: primaryColor,
             ),
             SizedBox(
-              height: 50,
+              height: 30.h,
             ),
             RadioListTile<Delivery>(
               value: Delivery.NominatedDelivery,
@@ -75,12 +68,11 @@ class _DeliveryTimeState extends State<DeliveryTime> {
               },
               title: CustomText(
                 text: "Nominated Delivery",
-                fontsize: 26,
+                fontsize: 24.sp,
               ),
-              subtitle: CustomText(
-                text:
-                    "Pick a particular date from the calendar and order will be delivered on selected date",
-                fontsize: 18,
+              subtitle: Text(
+                "Pick a particular date from the calendar and order will be delivered on selected date",
+                style: TextStyle(color: Colors.grey[600], fontSize: 18.sp),
               ),
               activeColor: primaryColor,
             )

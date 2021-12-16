@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, use_key_in_widget_constructors, sized_box_for_whitespace, unnecessary_string_interpolations
 
+import 'package:eshop/helper/constance.dart';
 import 'package:eshop/view/checkout/checkout_view.dart';
 import 'package:eshop/view/widgets/custom_button.dart';
 import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view_model/cart_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -32,25 +34,28 @@ class CartView extends StatelessWidget {
                                     fit: BoxFit.fill,
                                   )),
                               Padding(
-                                padding: const EdgeInsets.only(left: 30),
+                                padding:  EdgeInsets.only(left: 30.w),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    CustomText(
-                                      text: controller
-                                          .cartProductModel[index].name,
-                                      fontsize: 25,
+                                    SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Text(
+                                        "${controller
+                                            .cartProductModel[index].name}",
+                                            style: TextStyle(color:Colors.black,fontSize:25.sp),
+                                      ),
                                     ),
                                     SizedBox(
-                                      height: 10,
+                                      height: 10.h,
                                     ),
                                     CustomText(
                                       text:
-                                          "${controller.cartProductModel[index].price}",
-                                      color: Color.fromRGBO(0, 197, 105, 1),
+                                          "\$ ${controller.cartProductModel[index].price}",
+                                      color: primaryColor,
                                     ),
                                     SizedBox(
-                                      height: 20,
+                                      height: 20.h,
                                     ),
                                     Container(
                                       decoration: BoxDecoration(
@@ -58,7 +63,7 @@ class CartView extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(5)),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding:  EdgeInsets.all(8.0.w),
                                         child: Row(
                                           children: [
                                             GestureDetector(
@@ -68,7 +73,7 @@ class CartView extends StatelessWidget {
                                                 },
                                                 child: Icon(Icons.add)),
                                             SizedBox(
-                                              width: 20,
+                                              width: 20.w,
                                             ),
                                             CustomText(
                                               text: controller
@@ -77,7 +82,7 @@ class CartView extends StatelessWidget {
                                                   .toString(),
                                             ),
                                             SizedBox(
-                                              width: 20,
+                                              width: 20.w,
                                             ),
                                             GestureDetector(
                                                 onTap: () {
@@ -99,7 +104,7 @@ class CartView extends StatelessWidget {
                       itemCount: controller.cartProductModel.length,
                       separatorBuilder: (BuildContext context, int index) {
                         return SizedBox(
-                          height: 20,
+                          height: 20.h,
                         );
                       },
                     ),
@@ -115,8 +120,8 @@ class CartView extends StatelessWidget {
                     ),
                   ]),
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 30, right: 30, top: 10, bottom: 10),
+                    padding:  EdgeInsets.only(
+                        left: 30.w, right: 30.w, top: 10.h, bottom: 10.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -124,16 +129,16 @@ class CartView extends StatelessWidget {
                           children: [
                             CustomText(
                               text: "TOTAL",
-                              fontsize: 22,
+                              fontsize: 22.sp,
                               color: Colors.grey,
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 15.h,
                             ),
                             CustomText(
-                              text: "${controller.totalPrice}",
-                              fontsize: 18,
-                              color: Color.fromRGBO(0, 197, 105, 1),
+                              text: "\$ ${controller.totalPrice}",
+                              fontsize: 18.sp,
+                              color: primaryColor,
                             ),
                           ],
                         ),

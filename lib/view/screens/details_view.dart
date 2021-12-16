@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, sized_box_for_whitespace, must_be_immutable, avoid_unnecessary_containers
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, sized_box_for_whitespace, must_be_immutable, avoid_unnecessary_containers, unnecessary_string_interpolations
 
 import 'package:eshop/model/cart_product_model.dart';
 import 'package:eshop/model/product_model.dart';
@@ -8,6 +8,7 @@ import 'package:eshop/view/widgets/custom_button.dart';
 import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view_model/cart_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class DetailsView extends StatelessWidget {
@@ -21,32 +22,32 @@ class DetailsView extends StatelessWidget {
       child: Column(
         children: [
           Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * .25,
+              width: MediaQuery.of(context).size.width.w,
+              height: MediaQuery.of(context).size.height * .25.h,
               child: Image.network(model.image, fit: BoxFit.fill)),
           SizedBox(
-            height: 15,
+            height: 15.h,
           ),
           Expanded(
             child: SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(left: 15, right: 15),
+                padding: EdgeInsets.only(left: 15.w, right: 15.w),
                 child: Column(
                   children: [
                     CustomText(
                       text: model.name,
-                      fontsize: 26,
+                      fontsize: 26.sp,
                       fontweight: FontWeight.bold,
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 15.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width * .45,
-                          padding: EdgeInsets.all(12),
+                          padding: EdgeInsets.all(12.w),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(color: Colors.grey.shade200)),
@@ -62,7 +63,7 @@ class DetailsView extends StatelessWidget {
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width * .45,
-                          padding: EdgeInsets.all(12),
+                          padding: EdgeInsets.all(12.w),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(color: Colors.grey.shade200)),
@@ -73,8 +74,8 @@ class DetailsView extends StatelessWidget {
                                 text: "Color",
                               ),
                               Container(
-                                width: 20,
-                                height: 20,
+                                width: 20.w,
+                                height: 20.h,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(5),
                                     border:
@@ -87,17 +88,17 @@ class DetailsView extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 15.h,
                     ),
                     CustomText(
+                      fontsize: 16.sp,
                       text: "Details",
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 15.h,
                     ),
-                    CustomText(
-                      text: model.detail,
-                      fontsize: 18,
+                    Text(
+                      "${model.detail}",style: TextStyle(color: Colors.black,fontSize:18,height:2),
                     ),
                   ],
                 ),
@@ -111,11 +112,11 @@ class DetailsView extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    CustomText(text: "PRICE", color: Colors.grey.shade700),
+                    CustomText(text: "PRICE", color: Colors.grey.shade700,fontsize: 16.sp,),
                     CustomText(
-                      text: model.price,
+                      text: "\$ ${model.price}",
                       color: primaryColor,
-                      fontsize: 18,
+                      fontsize: 18.sp,
                     ),
                   ],
                 ),
