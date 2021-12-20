@@ -1,7 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:eshop/helper/constance.dart';
-import 'package:eshop/view/widgets/custom_text.dart';
 import 'package:eshop/view/widgets/custom_textformfeild.dart';
 import 'package:eshop/view_model/checkout_view_model.dart';
 import 'package:flutter/material.dart';
